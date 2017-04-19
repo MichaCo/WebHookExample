@@ -45,15 +45,15 @@ namespace Website.Controllers
         {
             if (string.IsNullOrWhiteSpace(payload))
             {
-                throw new ArgumentNullException(payload);
+                throw new ArgumentNullException(nameof(payload));
             }
             if (string.IsNullOrWhiteSpace(eventName))
             {
-                throw new ArgumentNullException(eventName);
+                throw new ArgumentNullException(nameof(eventName));
             }
             if (string.IsNullOrWhiteSpace(signatureWithPrefix))
             {
-                throw new ArgumentNullException(signatureWithPrefix);
+                throw new ArgumentNullException(nameof(signatureWithPrefix));
             }
 
             /* test if the eventName is ok if you want
