@@ -66,7 +66,7 @@ namespace Website.Controllers
             {
                 var signature = signatureWithPrefix.Substring(Sha1Prefix.Length);
                 var secret = Encoding.ASCII.GetBytes(_tokenOptions.Value.ServiceSecret);
-                var payloadBytes = Encoding.ASCII.GetBytes(payload);
+                var payloadBytes = Encoding.UTF8.GetBytes(payload);
 
                 using (var hmSha1 = new HMACSHA1(secret))
                 {
